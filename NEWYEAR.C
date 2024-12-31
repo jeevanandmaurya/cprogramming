@@ -2,24 +2,34 @@
 #include <windows.h>
 #include <string.h>
 
-void remove2023()
+void leftmargin(int x)
 {
-
-    int year = 2024;
-    int x = 30,y=10;
-   
-    while (x != 0)
+    for (int i = 0; i < x; i++)
     {
-         // top margin
+        printf(" ");
+    }
+}
+
+void topmargin(int y)
+{
     for (int i = 0; i < y; i++)
     {
         printf("\n");
     }
+}
+
+void remove2023()
+{
+
+    int year = 2024;
+    int x = 30, y = 10;
+
+    while (x != 0)
+    {
+        // top margin
+        topmargin(y);
         // left margin
-        for (int i = 0; i < x; i++)
-        {
-            printf(" ");
-        }
+        leftmargin(x + 5);
         printf("%d <--", year);
         x--;
         Sleep(50);
@@ -41,21 +51,14 @@ int main()
     for (int i = 0; i < 12; i++)
     {
         // skip for space
-        if (i == 5 || i == 9)
-            continue;
+        if (i == 5 || i == 9)continue;
 
         while (c != txt[i])
         {
             // top margin
-            for (int i = 0; i < y; i++)
-            {
-                printf("\n");
-            }
+            topmargin(y);
             // left margin
-            for (int i = 0; i < x; i++)
-            {
-                printf(" ");
-            }
+            leftmargin(x);
             // print txt
             for (int j = 0; j < i; j++)
             {
@@ -78,26 +81,12 @@ int main()
         while (a != yy[i])
         {
             // top margin
-            for (int i = 0; i < y; i++)
-            {
-                printf("\n");
-            }
+            topmargin(y);
             // left margin
-            for (int i = 0; i < x; i++)
-            {
-                printf(" ");
-            }
+            leftmargin(x);
             printf("%s\n", txt);
             // left margin
-            for (int i = 0; i < x; i++)
-            {
-                printf(" ");
-            }
-            // left margin
-            for (int i = 0; i < 5; i++)
-            {
-                printf(" ");
-            }
+            leftmargin(x + 5);
             for (int j = 0; j < i; j++)
             {
                 printf("%d", yy[j]);
@@ -109,38 +98,20 @@ int main()
         }
     }
     // top margin
-    for (int i = 0; i < y; i++)
-    {
-        printf("\n");
-    }
-
+    topmargin(y);
     // left margin
-    for (int i = 0; i < x; i++)
-    {
-        printf(" ");
-    }
+    leftmargin(x);
     printf("%s\n", txt);
-
     // left margin
-    for (int i = 0; i < x; i++)
-    {
-        printf(" ");
-    }
-    // left margin
-    for (int i = 0; i < 5; i++)
-    {
-        printf(" ");
-    }
+    leftmargin(x+5);
+    
     for (int j = 0; j < 4; j++)
     {
         printf("%d", yy[j]);
     }
 
     // bottom margin
-    for (int i = 0; i < y; i++)
-    {
-        printf("\n");
-    }
+    topmargin(y);
 
     return 0;
 }
